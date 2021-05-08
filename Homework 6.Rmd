@@ -1,0 +1,96 @@
+
+
+```{r}
+#Question 1
+
+matrix1 <- matrix(c(7,2,9,4,12,13), nrow = 2, ncol = 3)
+matrix2 <- matrix(c(1,2,3,7,8,9,12,13,14,19,20,21), nrow = 3, ncol = 4)
+
+matrixproduct <- matrix1 %*% matrix2
+
+#Resulting Matrix
+matrixproduct
+```
+
+```{r}
+#Question 2
+
+#A
+dataframe <- data.frame(
+  id = c(1,2,3,4,5),
+  name = c('Peter', 'Amy', 'Ryan', 'Gary', 'Michelle'),
+  salary = c(623.30, 515.20, 611.00, 729.00, 843.25)
+)
+dataframe
+```
+
+```{r}
+#B
+department <- data.frame(
+  department = c('IT', 'HR', 'Sales', 'PR', 'Research')
+)
+df_with_department <- cbind(dataframe, department)
+#B, resulting Matrix with Departments
+df_with_department
+
+```
+
+```{r}
+#C 
+df_with_department[c(1,3,5), c(2,3)]
+```
+
+```{r}
+#D
+barchart_df <- df_with_department[c(1,4,5), c(2,3)]
+barchart_df
+barplot(barchart_df$salary, main = 'Salaries of Individuals', names.arg = barchart_df$name)
+```
+
+```{r}
+#E
+df_with_department$name[which.max(df_with_department$salary)]
+df_with_department$name[which.min(df_with_department$salary)]
+df_with_department$name[df_with_department$salary == median(df_with_department$salary)]
+
+lbls <- 
+
+pie(df_with_department$salary, labels = df_with_department$name, main = 'Salaries in a Pie Chart')
+```
+
+
+```{r}
+#Question 3
+library(hash)
+#Function 1 (if else)
+
+mapping <- hash()
+mapping[['rock']] <- 0
+mapping[['paper']] <- 1
+mapping[['scissors']] <- 2
+
+trials = 1
+intcompmove = floor(runif(trials, min=0, max=3))
+if (intcompmove == 0){compmove = 'rock'
+}else if (intcompmove == 1){compmove == 'paper'
+  }else {compmove == 'scissors'}
+
+player_move <- readline(prompt = 'Enter rock, paper, or scissors: ')
+
+print(paste("Computer's move is", compmove))
+
+if (mapping[[player_move]] == intcompmove){print("Even")
+}else if ((intcompmove + 1) %% 3 == player_move){print('You Win')
+    }else {print('Computer Wins')}
+
+```
+
+
+```{r}
+#Function 2 (for / while loop)
+
+while(TRUE){
+  
+}
+```
+
